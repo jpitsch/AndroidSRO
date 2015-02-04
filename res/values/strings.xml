@@ -2,7 +2,9 @@
 <resources>
 
     <string name="app_name">AndroidSRO</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="hello_world">Video Test!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_carousel">Carousel</string>
+    <string name="menu_video">Video</string>
 
 </resources>
