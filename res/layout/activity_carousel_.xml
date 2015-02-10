@@ -8,42 +8,575 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.androidsro.CarouselActivity" >
 
-    <HorizontalScrollView 
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" >
-        
-        <LinearLayout 
-            android:orientation="horizontal"
+    <com.example.androidsro.ParentScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+            android:id="@+id/scrolllayout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-        	android:layout_width="wrap_content">
-        	
-            <Button 
-                android:layout_height="wrap_content"
-        		android:layout_width="wrap_content"
-        		android:text="button1"/>
-            <Button 
-                android:layout_height="wrap_content"
-        		android:layout_width="wrap_content"
-        		android:text="button2"/>
-            <Button 
-                android:layout_height="wrap_content"
-        		android:layout_width="wrap_content"
-        		android:text="button3"/>
-            <Button 
-                android:layout_height="wrap_content"
-        		android:layout_width="wrap_content"
-        		android:text="button4"/>
-            <Button 
-                android:layout_height="wrap_content"
-        		android:layout_width="wrap_content"
-        		android:text="button5"/>
-            <Button 
-                android:layout_height="wrap_content"
-        		android:layout_width="wrap_content"
-        		android:text="button6"/>
+            android:orientation="vertical">
         </LinearLayout>
-        
-        
-    </HorizontalScrollView>
+
+<!--         <LinearLayout -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:orientation="vertical" > -->
+
+<!--             <HorizontalScrollView -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" > -->
+
+<!--                 <LinearLayout -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                 </LinearLayout> -->
+<!--             </HorizontalScrollView> -->
+
+<!--             <HorizontalScrollView -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" > -->
+
+<!--                 <LinearLayout -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:orientation="horizontal" > -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                 </LinearLayout> -->
+<!--             </HorizontalScrollView> -->
+
+<!--             <HorizontalScrollView -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" > -->
+                
+<!--                 <LinearLayout -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:orientation="horizontal" > -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                 </LinearLayout> -->
+<!--             </HorizontalScrollView> -->
+                    
+<!--             <HorizontalScrollView -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" > -->
+                  
+<!--                 <LinearLayout -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:orientation="horizontal" > -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                 </LinearLayout> -->
+<!--             </HorizontalScrollView> -->
+
+<!--             <HorizontalScrollView -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" > -->
+                    
+<!--                 <LinearLayout -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:orientation="horizontal" > -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                 </LinearLayout> -->
+<!--             </HorizontalScrollView> -->
+
+<!--            <HorizontalScrollView -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" > -->
+                    
+<!--                 <LinearLayout -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:orientation="horizontal" > -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                 </LinearLayout> -->
+<!--             </HorizontalScrollView> -->
+
+<!--             <HorizontalScrollView -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" > -->
+
+<!--                 <LinearLayout -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:orientation="horizontal" > -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                 </LinearLayout> -->
+<!--             </HorizontalScrollView> -->
+
+<!--             <HorizontalScrollView -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" > -->
+
+<!--                 <LinearLayout -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:orientation="horizontal" > -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button1" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button2" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button3" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button4" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button5" /> -->
+
+<!--                     <Button -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:text="button6" /> -->
+<!--                 </LinearLayout> -->
+<!--             </HorizontalScrollView> -->
+<!--         </LinearLayout> -->
+    </com.example.androidsro.ParentScrollView>
 
 </RelativeLayout>

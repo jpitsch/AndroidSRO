@@ -1,51 +1,46 @@
 package com.example.androidsro;
 
-import android.os.Bundle;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.HorizontalScrollView;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-public class CarouselActivity extends BaseActivity {
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_carousel_);
-		
-		LinearLayout mainLayout = (LinearLayout)findViewById(R.id.scrolllayout);
-		for(int i=0; i<10; i++) {
-			mainLayout.addView(createRow(i));
-		}
-		
-		//ScrollView scroll = (ScrollView)findViewById(R.id.scrollview);
-		
-		//HorizontalScrollView hsv1 = new HorizontalScrollView(this);
-		//Button button = new Button(this);
+public class ImageAdapter extends BaseAdapter {
+	private Context mContext;
+	
+	public ImageAdapter(Context c) {
+		mContext = c;
 	}
 	
-	public HorizontalScrollView createRow(int rowNum) {
-		HorizontalScrollView scrollview = new HorizontalScrollView(this);
-		scrollview.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-		scrollview.setId(rowNum);
-		
-		LinearLayout layout = new LinearLayout(this);
-		layout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-		
-		ImageView imageView;
-		for(int i=0; i<mThumbIds.length; i++) {
-			imageView = new ImageView(this);
-			imageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+	public int getCount() {
+		return mThumbIds.length;
+	}
+	
+	public Object getItem(int position) {
+        return null;
+    }
+
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    // create a new ImageView for each item referenced by the Adapter
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView;
+        if (convertView == null) {  // if it's not recycled, initialize some attributes
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(185, 185));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8, 8, 8, 8);
-			imageView.setImageResource(mThumbIds[i]);
-			
-			layout.addView(imageView);
-		}
-		scrollview.addView(layout);
-		
-		return scrollview;
-	}
+        } else {
+            imageView = (ImageView) convertView;
+        }
+
+        imageView.setImageResource(mThumbIds[position]);
+        return imageView;
+    }
 	
     private Integer[] mThumbIds = {
             R.drawable.sample_2, R.drawable.sample_3,
