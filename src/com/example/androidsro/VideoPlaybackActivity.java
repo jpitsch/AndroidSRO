@@ -1,14 +1,11 @@
 package com.example.androidsro;
 
-import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-public class VideoPlaybackActivity extends Activity {
+public class VideoPlaybackActivity extends BaseActivity {
 	
 	String vidAddress = "https://s3-us-west-1.amazonaws.com/jwplayeroverlay/jw-text-overlay/test.mp4";
 

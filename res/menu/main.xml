@@ -1,23 +1,33 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.androidsro.MainActivity" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<!--     xmlns:tools="http://schemas.android.com/tools" -->
+<!--     tools:context="com.example.androidsro.MainActivity" > -->
+    <item
+        android:id="@+id/action_settings"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_home"/>
+   
    
     <item
         android:id="@+id/menu_video"
-        android:orderInCategory="100"
-        android:showAsAction="never"
+        android:showAsAction="ifRoom"
         android:title="@string/menu_video"/>
     
     <item
         android:id="@+id/menu_carousel"
-        android:orderInCategory="100"
-        android:showAsAction="never"
+        android:showAsAction="ifRoom"
         android:title="@string/menu_carousel"/>
-    
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/menu_settings"/>
 
 </menu>
+
+
+<!-- <menu xmlns:android="http://schemas.android.com/apk/res/android" > -->
+<!--     Search, should appear as action button -->
+<!--     <item android:id="@+id/action_search" -->
+<!--           android:icon="@drawable/ic_action_search" -->
+<!--           android:title="@string/action_search" -->
+<!--           android:showAsAction="ifRoom" /> -->
+<!--     Settings, should always be in the overflow -->
+<!--     <item android:id="@+id/action_settings" -->
+<!--           android:title="@string/action_settings" -->
+<!--           android:showAsAction="never" /> -->
+<!-- </menu> -->

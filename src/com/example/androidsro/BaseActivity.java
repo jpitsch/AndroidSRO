@@ -7,6 +7,14 @@ import android.view.MenuItem;
 
 public class BaseActivity extends Activity {
 	
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//	    // Inflate the menu items for use in the action bar
+//	    MenuInflater inflater = getMenuInflater();
+//	    inflater.inflate(R.menu.main_activity_actions, menu);
+//	    return super.onCreateOptionsMenu(menu);
+//	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -22,7 +30,8 @@ public class BaseActivity extends Activity {
 		
 		switch (item.getItemId()) {
 	        case R.id.action_settings:
-	            //showSettings();
+	            Intent mainIntent = new Intent(this, MainActivity.class);
+	            startActivity(mainIntent);
 	            return true;
 	        case R.id.menu_carousel:
 	        	Intent carouselIntent = new Intent(this, CarouselActivity.class);

@@ -5,6 +5,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class CarouselActivity extends BaseActivity {
 
@@ -13,24 +15,38 @@ public class CarouselActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_carousel_);
 		
+		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+	            RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+		
 		LinearLayout mainLayout = (LinearLayout)findViewById(R.id.scrolllayout);
+		
 		for(int i=0; i<10; i++) {
-			mainLayout.addView(createRow(i));
+			TextView rowTitle = new TextView(this);
+			rowTitle.setText("This is row number: " + i);
+			rowTitle.setId(20+i);
+			rowTitle.setLayoutParams(lp);
+			
+			mainLayout.addView(rowTitle);
+			
+			//lp.addRule(RelativeLayout.BELOW, rowTitle.getId());
+			HorizontalScrollView hsView = createRow(i);
+			hsView.setLayoutParams(lp);
+			mainLayout.addView(hsView);
+			
+			//lp.addRule(RelativeLayout.BELOW, hsView.getId());
 		}
-		
-		//ScrollView scroll = (ScrollView)findViewById(R.id.scrollview);
-		
-		//HorizontalScrollView hsv1 = new HorizontalScrollView(this);
-		//Button button = new Button(this);
 	}
 	
 	public HorizontalScrollView createRow(int rowNum) {
-		HorizontalScrollView scrollview = new HorizontalScrollView(this);
-		scrollview.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-		scrollview.setId(rowNum);
+		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+	            RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 		
 		LinearLayout layout = new LinearLayout(this);
-		layout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		layout.setLayoutParams(lp);
+		
+		HorizontalScrollView scrollview = new HorizontalScrollView(this);
+		scrollview.setLayoutParams(lp);
+		scrollview.setId(10+rowNum);
 		
 		ImageView imageView;
 		for(int i=0; i<mThumbIds.length; i++) {
@@ -42,6 +58,7 @@ public class CarouselActivity extends BaseActivity {
 			
 			layout.addView(imageView);
 		}
+
 		scrollview.addView(layout);
 		
 		return scrollview;
