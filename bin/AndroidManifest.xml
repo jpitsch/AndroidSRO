@@ -32,6 +32,10 @@
             android:name=".VideoPlaybackActivity"
             android:label="@string/title_activity_video_playback" >
         </activity>
+        <activity
+            android:name=".WebserviceCallActivity"
+            android:label="@string/title_activity_webservice_call" >
+        </activity>
     </application>
 
 </manifest>

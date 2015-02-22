@@ -3,7 +3,7 @@
     tools:context="com.example.androidsro.Carousel_Activity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_menu_carousel"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/menu_carousel"/>

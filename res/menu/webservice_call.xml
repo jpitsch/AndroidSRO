@@ -1,11 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.androidsro.VideoPlaybackActivity" >
+    tools:context="com.example.androidsro.WebserviceCallActivity" >
 
     <item
-        android:id="@+id/action_menu_video"
+        android:id="@+id/action_menu_webservice_call"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/menu_video"/>
-
+        android:title="@string/menu_webservice_call"/>
 </menu>

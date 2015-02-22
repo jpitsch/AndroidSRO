@@ -42,6 +42,10 @@ public class BaseActivity extends Activity {
 	        	Intent videoIntent = new Intent(this, VideoPlaybackActivity.class);
 	        	startActivity(videoIntent);
 	        	return true;
+	        case R.id.menu_webservice_call:
+	        	Intent webserviceCallIntent = new Intent(this, WebserviceCallActivity.class);
+	        	startActivity(webserviceCallIntent);
+	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 		}
