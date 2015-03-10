@@ -14,7 +14,8 @@ import android.os.Bundle;
 
 public class WebserviceCallActivity extends BaseActivity {
 
-	private String goGetUsersCallURL = "http://10.0.2.2:8080/getjsonsample/";
+	private String goGetUsersCallURL = "http://10.0.2.2:8080/getfakeuser/";
+	private String goGetCategoriesCallURL = "http://10.0.2.2:8080/getfakecategories/";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +31,9 @@ public class WebserviceCallActivity extends BaseActivity {
 		protected String doInBackground(String... params) {
 			
 			String inputStr = "";
-			//InputStream in = null;
 			
 			try {
-				URL url = new URL(goGetUsersCallURL);
+				URL url = new URL(params[0]);
 		        
 		        BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 		        

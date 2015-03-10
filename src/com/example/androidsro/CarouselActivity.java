@@ -1,5 +1,20 @@
 package com.example.androidsro;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Set;
+
+import org.codehaus.jackson.map.ObjectMapper;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.HorizontalScrollView;
@@ -9,32 +24,25 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class CarouselActivity extends BaseActivity {
+	
+	private static String goGetCategoriesCallURL = "http://10.0.2.2:8080/getfakecategories/";
 
+	private ProgressDialog pDialog;
+
+	//Array of JSON objects from webservice call
+	JSONArray jsonResponse;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_carousel_);
 		
-		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-	            RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-		
-		LinearLayout mainLayout = (LinearLayout)findViewById(R.id.scrolllayout);
-		
-		for(int i=0; i<10; i++) {
-			TextView rowTitle = new TextView(this);
-			rowTitle.setText("This is row number: " + i);
-			rowTitle.setId(20+i);
-			rowTitle.setLayoutParams(lp);
-			
-			mainLayout.addView(rowTitle);
-			
-			//lp.addRule(RelativeLayout.BELOW, rowTitle.getId());
-			HorizontalScrollView hsView = createRow(i);
-			hsView.setLayoutParams(lp);
-			mainLayout.addView(hsView);
-			
-			//lp.addRule(RelativeLayout.BELOW, hsView.getId());
-		}
+//		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+//	            RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//		
+//		LinearLayout mainLayout = (LinearLayout)findViewById(R.id.scrolllayout);
+		 
+		new CallCategoryWebserviceAPI().execute();
 	}
 	
 	public HorizontalScrollView createRow(int rowNum) {
@@ -62,6 +70,68 @@ public class CarouselActivity extends BaseActivity {
 		scrollview.addView(layout);
 		
 		return scrollview;
+	}
+	
+	private class CallCategoryWebserviceAPI extends AsyncTask<Void, Void, Void> {
+		
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // Showing progress dialog
+            pDialog = new ProgressDialog(CarouselActivity.this);
+            pDialog.setMessage("Please wait...");
+            pDialog.setCancelable(false);
+            pDialog.show();
+ 
+        }
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			
+			try {
+				URL url = new URL(goGetCategoriesCallURL);
+		        
+		        BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+		        
+		        JSONParser parser=new JSONParser();
+		        jsonResponse = (JSONArray)parser.parse(in);
+		        
+		        
+			} catch (IOException | ParseException e) {
+				e.printStackTrace();
+			}
+			
+			return null;
+		}
+		
+		@Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            // Dismiss the progress dialog
+            if (pDialog.isShowing())
+                pDialog.dismiss();
+            
+    		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+    				RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    		
+    		LinearLayout mainLayout = (LinearLayout)findViewById(R.id.scrolllayout);
+            
+    		for(int i=0; i<jsonResponse.size(); i++) {
+    			JSONObject object = (JSONObject)jsonResponse.get(i);
+    			String key = (String)object.get("Name");
+    			
+    			TextView rowTitle = new TextView(CarouselActivity.this);
+    			rowTitle.setText(key);
+    			rowTitle.setId(20+i);
+    			rowTitle.setLayoutParams(lp);
+    			
+    			mainLayout.addView(rowTitle);
+    			
+    			HorizontalScrollView hsView = createRow(i);
+    			hsView.setLayoutParams(lp);
+    			mainLayout.addView(hsView);
+    		}
+        }
 	}
 	
     private Integer[] mThumbIds = {
