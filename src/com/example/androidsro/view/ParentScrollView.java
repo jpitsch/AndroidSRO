@@ -1,4 +1,4 @@
-package com.example.androidsro;
+package com.example.androidsro.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

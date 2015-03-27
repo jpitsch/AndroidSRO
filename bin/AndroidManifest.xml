@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,16 +25,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CarouselActivity"
+            android:name=".activity.CarouselActivity"
             android:label="@string/title_activity_carousel_" >
         </activity>
         <activity
-            android:name=".VideoPlaybackActivity"
+            android:name=".activity.VideoPlaybackActivity"
             android:label="@string/title_activity_video_playback" >
         </activity>
         <activity
-            android:name=".WebserviceCallActivity"
+            android:name=".activity.WebserviceCallActivity"
             android:label="@string/title_activity_webservice_call" >
+        </activity>
+        <activity
+            android:name="com.example.androidsro.activity.AssetDetailActivity"
+            android:label="@string/title_activity_asset_detail" >
         </activity>
     </application>
 

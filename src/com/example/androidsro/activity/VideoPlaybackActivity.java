@@ -1,4 +1,6 @@
-package com.example.androidsro;
+package com.example.androidsro.activity;
+
+import com.example.androidsro.R;
 
 import android.net.Uri;
 import android.os.Bundle;

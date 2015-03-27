@@ -1,4 +1,6 @@
-package com.example.androidsro;
+package com.example.androidsro.view;
+
+import com.example.androidsro.R;
 
 import android.content.Context;
 import android.view.View;

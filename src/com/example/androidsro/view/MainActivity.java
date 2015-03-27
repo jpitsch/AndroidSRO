@@ -1,4 +1,7 @@
-package com.example.androidsro;
+package com.example.androidsro.view;
+
+import com.example.androidsro.R;
+import com.example.androidsro.activity.BaseActivity;
 
 import android.os.Bundle;
 import android.widget.GridView;

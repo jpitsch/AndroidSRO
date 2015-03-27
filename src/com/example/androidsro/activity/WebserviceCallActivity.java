@@ -1,4 +1,4 @@
-package com.example.androidsro;
+package com.example.androidsro.activity;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,6 +8,8 @@ import java.net.URL;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import com.example.androidsro.R;
 
 import android.os.AsyncTask;
 import android.os.Bundle;

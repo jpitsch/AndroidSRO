@@ -1,4 +1,7 @@
-package com.example.androidsro;
+package com.example.androidsro.activity;
+
+import com.example.androidsro.R;
+import com.example.androidsro.view.MainActivity;
 
 import android.app.Activity;
 import android.content.Intent;

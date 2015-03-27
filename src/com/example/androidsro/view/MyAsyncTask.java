@@ -1,4 +1,4 @@
-package com.example.androidsro;
+package com.example.androidsro.view;
 
 import java.io.BufferedReader;
 import java.io.IOException;
